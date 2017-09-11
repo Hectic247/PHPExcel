@@ -1762,13 +1762,13 @@ class PHPExcel_Reader_Excel2007 extends PHPExcel_Reader_Abstract implements PHPE
     private static function readStyle($docStyle, $style)
     {
         // format code
-//        if (isset($style->numFmt)) {
-//            if (isset($style->numFmt['formatCode'])) {
-//                $docStyle->getNumberFormat()->setFormatCode((string) $style->numFmt['formatCode']);
-//            } else {
+       if (isset($style->numFmt)) {
+           if (isset($style->numFmt['formatCode'])) {
+               $docStyle->getNumberFormat()->setFormatCode((string) $style->numFmt['formatCode']);
+           } else {
                 $docStyle->getNumberFormat()->setFormatCode($style->numFmt);
-//            }
-//        }
+           }
+       }
 
         // font
         if (isset($style->font)) {
